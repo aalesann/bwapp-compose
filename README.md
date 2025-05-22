@@ -1,9 +1,6 @@
 # 🐝 bWAPP con Docker Compose
 
-Este repositorio contiene una orquestación de **bWAPP** (una aplicación vulnerable para pruebas de seguridad web) utilizando `Docker Compose`, con soporte para:
-
-- 📦 Persistencia de archivos y configuraciones.
-- 🐬 Base de datos MySQL externa y persistente.
+Este repositorio contiene una orquestación de **bWAPP** (una aplicación vulnerable para pruebas de seguridad web) utilizando `Docker Compose`.
 
 ---
 
@@ -25,7 +22,7 @@ docker compose up -d
 3. Accede desde tu navegador:
 
 ```
-http://localhost:8080/install.php
+http://localhost/install.php
 ```
 
 Haz clic en **"click here to install bWAPP"** para inicializar la base de datos.
@@ -37,9 +34,9 @@ Haz clic en **"click here to install bWAPP"** para inicializar la base de datos.
 ```
 bwapp-compose/
 ├── docker-compose.yml
+├── .dockerignore
+├── .gitignore
 ├── README.md
-└── data/              # Persistencia de MySQL
-    └── ...
 ```
 
 ---
@@ -48,30 +45,11 @@ bwapp-compose/
 
 ### bWAPP
 
-- URL: [http://localhost:8080](http://localhost:8080)
+- URL: [http://localhost](http://localhost)
 - Volumen: persistencia en `/var/www/html`
-- Expone puerto `8080`
-
-### MySQL
-
-- Host: `mysql`
-- Usuario: `root`
-- Contraseña: `root`
-- Base de datos: `bwapp`
-
+- Expone puerto `80`
 ---
 
-## 🧪 Tips para pentesting
-
-- Subidas realizadas con RFI o LFI se almacenan en `/var/www/html/uploads`
-- Puedes inspeccionar con:
-
-```bash
-docker exec -it bwapp bash
-ls /var/www/html/uploads
-```
-
----
 
 ## 🧼 Comandos útiles
 
@@ -79,12 +57,6 @@ Detener servicios:
 
 ```bash
 docker compose down
-```
-
-Resetear entorno completo (incluye borrado de datos):
-
-```bash
-docker compose down -v
 ```
 
 ---
