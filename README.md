@@ -9,7 +9,7 @@ Este repositorio contiene una orquestación de **bWAPP** (una aplicación vulner
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/bwapp-compose.git
+git clone https://github.com/aalesann/bwapp-compose.git
 cd bwapp-compose
 ```
 
@@ -41,23 +41,14 @@ bwapp-compose/
 
 ---
 
-## 🐳 Servicios
-
-### bWAPP
-
-- URL: [http://localhost](http://localhost)
-- Volumen: persistencia en `/var/www/html`
-- Expone puerto `80`
----
-
-
 ## 🧼 Comandos útiles
 
-Detener servicios:
+Detener servicios (Ctrl + C es otra opción):
 
 ```bash
 docker compose down
 ```
+-> Ctrl + C es otra opción para detener los servicios
 
 ---
 
